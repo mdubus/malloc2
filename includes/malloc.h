@@ -52,5 +52,6 @@ void	*create_new_memory_block(size_t size);
 /* TESTS */
 void	test_get_padded_size(void);
 void	test_create_new_link(void);
+void	test_create_new_memory_block(void);
 
 #endif
