@@ -1,19 +1,18 @@
 #include "../Unity/src/unity.h"
 #include "../../../includes/malloc.h"
 
-
-void	test_get_padded_size(void)
-{
-	TEST_ASSERT_EQUAL(get_padded_size(0), 0);
-	TEST_ASSERT_EQUAL(get_padded_size(1), 8);
-	TEST_ASSERT_EQUAL(get_padded_size(7), 8);
-	TEST_ASSERT_EQUAL(get_padded_size(8), 8);
-	TEST_ASSERT_EQUAL(get_padded_size(9), 16);
+void	test_create_new_memory_block(void) {
+	l.free.tiny.data = create_new_memory_block(MAX_TINY * getpagesize());
+	
+	TEST_ASSERT_EQUAL(sizeof(l.free.tiny.data), MAX_TINY * getpagesize());
 }
+
 
 int	main(void)
 {
 	UNITY_BEGIN();
+	RUN_TEST(test_create_new_link);
 	RUN_TEST(test_get_padded_size);
+//	RUN_TEST(test_create_new_memory_block);
 	return UNITY_END();
 }

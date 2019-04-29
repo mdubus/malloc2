@@ -21,7 +21,7 @@ UNIT_TEST_INCLUDES = -I $(UNITY_SRC)/$(UNITY_INCL_FILE)
 ##### UNIT TESTS #####
 
 UNIT_SRC_DIR = $(addprefix $(UNIT_TEST_DIR)/, src)
-UNIT_SRC_FILES = test.c
+UNIT_SRC_FILES = test.c test_get_padded_size.c test_create_new_link.c
 UNIT_SRCS = $(addprefix $(UNIT_SRC_DIR)/, $(UNIT_SRC_FILES))
 
 ##### UNIT OBJS #####
@@ -33,7 +33,7 @@ UNIT_OBJS = $(addprefix $(UNIT_OBJ_DIR)/, $(UNIT_SRC_FILES:.c=.o))
 ##### SOURCES #####
 
 SRC_DIR = src
-SRC_FILES = malloc.c create_new_link.c get_padded_size.c
+SRC_FILES = malloc.c create_new_link.c get_padded_size.c create_new_memory_block.c
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
 ##### OBJECTS #####

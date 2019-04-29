@@ -27,24 +27,30 @@ typedef struct s_free t_free;
 
 struct s_header {
 	size_t		size;
-	t_header	*data;
+	void		*data;
 	t_header	*next;
 	t_header	*prev;
 };
 
 struct s_free {
-	t_header	*header;
-	t_header	*tiny;
-	t_header	*small;
+	t_header	header;
+	t_header	tiny;
+	t_header	small;
 };
 
-struct s_list{
-	t_header	*used;
-	t_list		*free;
+struct s_list {
+	t_header	used;
+	t_free		free;
 };
 
 t_list	l;
 
 size_t	get_padded_size(size_t size);
+void	create_new_link(t_header *link);
+void	*create_new_memory_block(size_t size);
+
+/* TESTS */
+void	test_get_padded_size(void);
+void	test_create_new_link(void);
 
 #endif
