@@ -45,13 +45,15 @@ struct s_list {
 
 t_list	l;
 
-size_t	get_padded_size(size_t size);
-void	create_new_link(t_header *link);
-void	*create_new_memory_block(size_t size);
+size_t		get_padded_size(size_t size);
+void		create_new_link(t_header *link);
+void		*create_new_memory_block(size_t size);
+t_header	*search_best_fit(t_header *list);
 
 /* TESTS */
-void	test_get_padded_size(void);
-void	test_create_new_link(void);
-void	test_create_new_memory_block(void);
+void		test_get_padded_size(void);
+void		test_create_new_link(void);
+void		test_create_new_memory_block(void);
+void		test_search_best_fit(void);
 
 #endif

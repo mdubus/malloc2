@@ -9,5 +9,6 @@ int	main(void)
 	RUN_TEST(test_create_new_link);
 	RUN_TEST(test_get_padded_size);
 	RUN_TEST(test_create_new_memory_block);
+	RUN_TEST(test_search_best_fit);
 	return UNITY_END();
 }

@@ -6,6 +6,7 @@ void	test_create_new_memory_block(void) {
 
 	ptr = create_new_memory_block(MAX_TINY * getpagesize());
 	TEST_ASSERT(ptr != NULL);
+	munmap(ptr, MAX_TINY * getpagesize());
 	ptr = create_new_memory_block(0);
 	TEST_ASSERT(ptr == NULL);
 	ptr = create_new_memory_block(-1);

@@ -2,7 +2,7 @@
 
 void	create_new_link(t_header *link)
 {
-	link->size = -1;
+	link->size = 0;
 	link->data = NULL;
 	link->prev = NULL;
 	link->next = NULL;
