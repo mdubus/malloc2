@@ -1,27 +1,6 @@
 #include "../Unity/src/unity.h"
 #include "../../../includes/malloc.h"
 
-t_header	*get_testing_list(void)
-{
-	t_header	*list;
-	t_header	*tmp;
-
-	list = (t_header*)mmap(0, 1024, MMAP_PROT, MMAP_FLAGS, -1, 0);
-	tmp = list;
-	list->prev = NULL;
-	list->size = 1;
-	list->next = list + sizeof(t_header);
-	list->next->prev = list;
-	list = list->next;
-	list->size = 2;
-	list->next = list + sizeof(t_header);
-	list->next->prev = list;
-	list = list->next;
-	list->size = 3;
-	list->next = NULL;
-	return (tmp);
-}
-
 void	test_detach_first_link(void)
 {
 	t_header	*list;
@@ -29,6 +8,9 @@ void	test_detach_first_link(void)
 	t_header	*tmp;
 
 	list = get_testing_list();
+	list->size = 1;
+	list->next->size = 2;
+	list->next->next->size = 3;
 	tmp = list;
 	link = list;
 	detach_link(&list, link);
@@ -50,6 +32,9 @@ void	test_detach_middle_link(void)
 	t_header	*tmp;
 
 	list = get_testing_list();
+	list->size = 1;
+	list->next->size = 2;
+	list->next->next->size = 3;
 	tmp = list;
 	link = list->next;
 	detach_link(&list, link);
@@ -71,6 +56,9 @@ void	test_detach_last_link(void)
 	t_header	*tmp;
 
 	list = get_testing_list();
+	list->size = 1;
+	list->next->size = 2;
+	list->next->next->size = 3;
 	tmp = list;
 	link = list->next->next;
 	detach_link(&list, link);

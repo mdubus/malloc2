@@ -56,6 +56,7 @@ void		test_get_padded_size(void);
 void		test_create_new_link(void);
 void		test_create_new_memory_block(void);
 void		test_search_best_fit(void);
-void	test_detach_link(void);
+void		test_detach_link(void);
+t_header	*get_testing_list(void);
 
 #endif

@@ -21,7 +21,7 @@ UNIT_TEST_INCLUDES = -I $(UNITY_SRC)/$(UNITY_INCL_FILE)
 ##### UNIT TESTS #####
 
 UNIT_SRC_DIR = $(addprefix $(UNIT_TEST_DIR)/, src)
-UNIT_SRC_FILES = test.c test_get_padded_size.c test_create_new_link.c test_create_new_memory_block.c test_search_best_fit.c test_detach_link.c
+UNIT_SRC_FILES = test.c test_get_padded_size.c test_create_new_link.c test_create_new_memory_block.c test_search_best_fit.c test_detach_link.c get_testing_list.c
 UNIT_SRCS = $(addprefix $(UNIT_SRC_DIR)/, $(UNIT_SRC_FILES))
 
 ##### UNIT OBJS #####
