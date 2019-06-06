@@ -10,6 +10,8 @@
 
 ## Design
 
+```
 used => [header]--[header]--[header]--[header] ...
            |          |         |        |
 datas:    tiny      large      tiny     large
+```
