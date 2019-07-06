@@ -2,9 +2,9 @@
 
 ## API
 
-[x] create_new_link
+- [x] create_new_link
 
-[x] get_paddded_size
+- [x] get_paddded_size
 
 [x] create_new_memory_block
 
