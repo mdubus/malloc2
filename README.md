@@ -20,7 +20,7 @@
 
 - [ ] insert_link_after
 
--[ ] defrag_before
+- [ ] defrag_before
 
 ## Init arena list
 
