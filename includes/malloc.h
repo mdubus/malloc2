@@ -7,11 +7,11 @@
 // On mac, 2^21 is the max size for tiny arenas.
 // 2^21 / 4096 (page size) = 512
 #define MAX_TINY	512
-
 #define MAX_SMALL	4096
 
-#define TRUE	1
-#define FALSE	0
+#define TINY	0
+#define SMALL	1
+#define LARGE	2
 
 #include <stddef.h>
 #include <sys/mman.h>
@@ -32,15 +32,9 @@ struct s_header {
 	t_header	*prev;
 };
 
-struct s_free {
-	t_header	header;
-	t_header	tiny;
-	t_header	small;
-};
-
 struct s_list {
 	t_header	used;
-	t_free		free;
+	t_header	free[2];
 };
 
 t_list	l;
@@ -50,6 +44,7 @@ void		create_new_link(t_header *link);
 void		*create_new_memory_block(size_t size);
 t_header	*search_best_fit(t_header *list);
 void		detach_link(t_header **list, t_header *link);
+void		*ft_malloc(size_t size);
 
 /* TESTS */
 void		test_get_padded_size(void);
