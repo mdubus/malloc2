@@ -42,7 +42,7 @@ t_list	l;
 size_t		get_padded_size(size_t size);
 void		create_new_link(t_header *link);
 void		*create_new_memory_block(size_t size);
-t_header	*search_best_fit(t_header *list);
+t_header	*search_best_fit(t_header *list, size_t size);
 void		detach_link(t_header **list, t_header *link);
 void		*ft_malloc(size_t size);
 

@@ -12,7 +12,7 @@ void	test_ascending_size(void)
 	list->size = 1;
 	list->next->size = 2;
 	list->next->next->size = 3;
-	best_fit = search_best_fit(tmp);
+	best_fit = search_best_fit(tmp, 1);
 	TEST_ASSERT_EQUAL(best_fit->size, 1);
 	munmap(tmp, 1024);
 }
@@ -28,8 +28,8 @@ void	test_descending_size(void)
 	list->size = 3;
 	list->next->size = 2;
 	list->next->next->size = 1;
-	best_fit = search_best_fit(tmp);
-	TEST_ASSERT_EQUAL(best_fit->size, 1);
+	best_fit = search_best_fit(tmp, 3);
+	TEST_ASSERT_EQUAL(best_fit->size, 3);
 	munmap(tmp, 1024);
 }
 
@@ -39,13 +39,14 @@ void	test_unordered_sizes(void)
 	t_header	*tmp;
 	t_header	*best_fit;
 
+
 	list = get_testing_list();
 	tmp = list;
 	list->size = 2;
 	list->next->size = 3;
 	list->next->next->size = 1;
-	best_fit = search_best_fit(tmp);
-	TEST_ASSERT_EQUAL(best_fit->size, 1);
+	best_fit = search_best_fit(tmp, 3);
+	TEST_ASSERT_EQUAL(best_fit->size, 3);
 	munmap(tmp, 1024);
 }
 
@@ -55,7 +56,7 @@ void	test_no_result(void)
 	t_header	*best_fit;
 
 	tmp = NULL;
-	best_fit = search_best_fit(tmp);
+	best_fit = search_best_fit(tmp, 1);
 	TEST_ASSERT_EQUAL(best_fit, NULL);
 }
 
