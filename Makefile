@@ -21,7 +21,7 @@ UNIT_TEST_INCLUDES = -I $(UNITY_SRC)/$(UNITY_INCL_FILE)
 ##### UNIT TESTS #####
 
 UNIT_SRC_DIR = $(addprefix $(UNIT_TEST_DIR)/, src)
-UNIT_SRC_FILES = test.c test_get_padded_size.c test_create_new_link.c test_create_new_memory_block.c test_search_best_fit.c test_detach_link.c get_testing_list.c test_split_block.c
+UNIT_SRC_FILES = test.c test_get_padded_size.c test_create_new_link.c test_create_new_memory_block.c test_search_best_fit.c test_detach_link.c get_testing_list.c test_split_block.c test_search_link_before.c
 UNIT_SRCS = $(addprefix $(UNIT_SRC_DIR)/, $(UNIT_SRC_FILES))
 
 ##### UNIT OBJS #####
@@ -33,7 +33,7 @@ UNIT_OBJS = $(addprefix $(UNIT_OBJ_DIR)/, $(UNIT_SRC_FILES:.c=.o))
 ##### SOURCES #####
 
 SRC_DIR = src
-SRC_FILES = malloc.c create_new_link.c get_padded_size.c create_new_memory_block.c search_best_fit.c detach_link.c get_arena_type.c init_arena.c split_block.c
+SRC_FILES = malloc.c create_new_link.c get_padded_size.c create_new_memory_block.c search_best_fit.c detach_link.c get_arena_type.c init_arena.c split_block.c search_link_before.c
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
 ##### OBJECTS #####

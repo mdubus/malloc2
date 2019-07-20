@@ -33,7 +33,8 @@ void	*ft_malloc(size_t size)
 		// Si best_fit est null, mmap a nouveau.
 		// Si l'arena est null, alors l'arena devient le nouveau block mmap.
 		// Si arena est pas null, on place le noveau morceau par adresse.
-		printf("%zu\n", best_fit->size);
+		split_block(&best_fit, arena_type, padded_size);
+		return (best_fit);
 	}
 	return (0);
 }

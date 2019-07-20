@@ -12,11 +12,9 @@
 
 - [x] split_block
 
-- [ ] extract_link
-
 - [x] search_best_fit
 
-- [ ] search_link_by_address
+- [x] search_link_before
 
 - [ ] insert_link_after
 

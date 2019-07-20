@@ -12,5 +12,6 @@ int	main(void)
 	RUN_TEST(test_search_best_fit);
 	RUN_TEST(test_detach_link);
 	RUN_TEST(test_split_block);
+	RUN_TEST(test_search_link_before);
 	return UNITY_END();
 }
