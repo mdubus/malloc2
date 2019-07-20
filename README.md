@@ -10,9 +10,9 @@
 
 - [x] detach_link
 
-- [ ] split_block
+- [x] split_block
 
-- [ ] create_rest_block
+- [ ] extract_link
 
 - [x] search_best_fit
 
