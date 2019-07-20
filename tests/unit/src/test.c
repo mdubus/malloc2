@@ -11,5 +11,6 @@ int	main(void)
 	RUN_TEST(test_create_new_memory_block);
 	RUN_TEST(test_search_best_fit);
 	RUN_TEST(test_detach_link);
+	RUN_TEST(test_split_block);
 	return UNITY_END();
 }
