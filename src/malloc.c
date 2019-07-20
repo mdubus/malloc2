@@ -38,14 +38,14 @@ int		init_arena(int arena_type)
 	size_t	max_arena_size;
 
 	max_arena_size = get_max_arena_size(arena_type);
-	l.free[arena_type].data = create_new_memory_block(max_arena_size);
-	if (l.free[arena_type].data == NULL)
+	l.free[arena_type] = create_new_memory_block(max_arena_size + sizeof(t_header));
+	if (l.free[arena_type] == NULL)
 		return (1);
 	create_new_link(&l.free[arena_type]);
 	printf("max size : %zu\n", max_arena_size);
 	printf("header size : %zu\n", sizeof(t_header));
 
-	l.free[arena_type].size = max_arena_size - sizeof(t_header);
+	l.free[arena_type]->size = max_arena_size;
 	return (0);
 }
 
@@ -62,11 +62,11 @@ void	*ft_malloc(size_t size)
 		printf("LARGE ARENA");
 	else
 	{
-		if (l.free[arena_type].data == NULL)
+		if (l.free[arena_type] == NULL)
 			if (init_arena(arena_type) == 1)
 				return (0);
 		padded_size = get_padded_size(size);
-		best_fit = search_best_fit(&l.free[arena_type], padded_size);
+		best_fit = search_best_fit(l.free[arena_type], padded_size);
 		// Si best_fit est null, mmap a nouveau.
 		// Si l'arena est null, alors l'arena devient le nouveau block mmap.
 		// Si arena est pas null, on place le noveau morceau par adresse.

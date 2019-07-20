@@ -27,20 +27,19 @@ typedef struct s_free t_free;
 
 struct s_header {
 	size_t		size;
-	void		*data;
 	t_header	*next;
 	t_header	*prev;
 };
 
 struct s_list {
-	t_header	used;
-	t_header	free[2];
+	t_header	*used;
+	t_header	*free[2];
 };
 
 t_list	l;
 
 size_t		get_padded_size(size_t size);
-void		create_new_link(t_header *link);
+void		create_new_link(t_header **link);
 void		*create_new_memory_block(size_t size);
 t_header	*search_best_fit(t_header *list, size_t size);
 void		detach_link(t_header **list, t_header *link);
