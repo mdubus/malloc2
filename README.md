@@ -16,6 +16,6 @@
 
 - [x] search_link_before
 
-- [ ] insert_link_after
+- [x] insert_link_after
 
 - [ ] defrag_before
