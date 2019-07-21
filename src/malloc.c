@@ -16,6 +16,7 @@ void	*ft_malloc(size_t size)
 {
 	int			arena_type;
 	t_header	*best_fit;
+	t_header	*before;
 	size_t		padded_size;
 
 	if (size <= 0)
@@ -35,6 +36,7 @@ void	*ft_malloc(size_t size)
 		// Si arena est pas null, on place le noveau morceau par adresse.
 		split_block(&best_fit, arena_type, padded_size);
 		detach_link(&l.free[arena_type], best_fit);
+		insert_link_in_list(&l.used, &best_fit);
 		return (best_fit);
 	}
 	return (0);
