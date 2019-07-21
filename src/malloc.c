@@ -34,6 +34,7 @@ void	*ft_malloc(size_t size)
 		// Si l'arena est null, alors l'arena devient le nouveau block mmap.
 		// Si arena est pas null, on place le noveau morceau par adresse.
 		split_block(&best_fit, arena_type, padded_size);
+		detach_link(&l.free[arena_type], best_fit);
 		return (best_fit);
 	}
 	return (0);

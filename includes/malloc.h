@@ -48,6 +48,7 @@ int			init_arena(int arena_type);
 int			get_arena_type(size_t size);
 void		split_block(t_header **link, int arena_type, size_t size);
 t_header	*search_link_before(t_header *link, t_header *list);
+void		insert_link_after(t_header **before, t_header **link);
 
 /* TESTS */
 void		test_get_padded_size(void);
@@ -58,5 +59,6 @@ void		test_detach_link(void);
 void		test_split_block(void);
 t_header	*get_testing_list(void);
 void		test_search_link_before(void);
+void		test_insert_link_after(void);
 
 #endif

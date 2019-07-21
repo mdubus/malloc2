@@ -13,5 +13,6 @@ int	main(void)
 	RUN_TEST(test_detach_link);
 	RUN_TEST(test_split_block);
 	RUN_TEST(test_search_link_before);
+	RUN_TEST(test_insert_link_after);
 	return UNITY_END();
 }

@@ -28,7 +28,7 @@ void	test_cant_split_2(void)
 	munmap(l.free[TINY], size);
 }
 
-void	test_split()
+void	test_split(void)
 {
 	size_t	size;
 
