@@ -44,7 +44,7 @@ void		*create_new_memory_block(size_t size);
 t_header	*search_best_fit(t_header *list, size_t size);
 void		detach_link(t_header **list, t_header *link);
 void		*ft_malloc(size_t size);
-int			init_arena(int arena_type);
+t_header	*init_arena(size_t size);
 int			get_arena_type(size_t size);
 void		split_block(t_header **link, int arena_type, size_t size);
 t_header	*search_link_before(t_header *link, t_header *list);

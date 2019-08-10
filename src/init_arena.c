@@ -13,15 +13,19 @@ size_t	get_max_arena_size(int arena_type)
 	return (0);
 }
 
-int		init_arena(int arena_type)
+t_header	*init_arena(size_t size)
 {
-	size_t	max_arena_size;
+	t_header	*arena;
+	int			arena_type;
+	size_t		arena_size;
 
-	max_arena_size = get_max_arena_size(arena_type);
-	l.free[arena_type] = create_new_memory_block(max_arena_size + sizeof(t_header));
-	if (l.free[arena_type] == NULL)
-		return (1);
-	create_new_link(&l.free[arena_type]);
-	l.free[arena_type]->size = max_arena_size;
-	return (0);
+	arena_type = get_arena_type(size);
+	if (arena_type == LARGE)
+		arena_size = size;
+	else
+		arena_size = get_max_arena_size(arena_type);
+	arena = create_new_memory_block(arena_size + sizeof(t_header));
+	create_new_link(&arena);
+	arena->size = arena_size;
+	return (arena);
 }
