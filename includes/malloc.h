@@ -46,14 +46,17 @@ void		detach_link(t_header **list, t_header *link);
 void		*ft_malloc(size_t size);
 t_header	*init_arena(size_t size);
 int			get_arena_type(size_t size);
-void		split_block(t_header **link, int arena_type, size_t size);
+void		split_block(t_header **link,  size_t size);
 t_header	*search_link_before(t_header *link, t_header *list);
 void		insert_link_after(t_header **before, t_header **link);
 void		insert_link_in_list(t_header **list, t_header **link);
 void		ft_putnbr(size_t nbr);
 size_t		ft_strlen(const char *s);
 void		ft_putstr(char *str);
+void		print_address(uintptr_t ptr);
 char		*ft_utoa_base_r(char *buf, unsigned long long n, unsigned base);
+void		show_alloc_mem();
+
 
 /* TESTS */
 void		test_get_padded_size(void);
