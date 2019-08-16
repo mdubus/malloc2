@@ -19,3 +19,11 @@
 - [x] insert_link_after
 
 - [ ] defrag_before
+
+
+## TODO
+
+```
+void       free(void *ptr);
+void       *realloc(void *ptr, size_t size);
+```

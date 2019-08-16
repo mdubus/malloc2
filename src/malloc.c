@@ -46,7 +46,7 @@ void	*ft_malloc(size_t size)
 	t_header	*arena;
 
 	if (size <= 0)
-		return (0);
+		return (NULL);
 	padded_size = get_padded_size(size);
 	arena_type = get_arena_type(padded_size);
 	if (arena_type == LARGE)
