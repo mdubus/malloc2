@@ -33,7 +33,7 @@ UNIT_OBJS = $(addprefix $(UNIT_OBJ_DIR)/, $(UNIT_SRC_FILES:.c=.o))
 ##### SOURCES #####
 
 SRC_DIR = src
-SRC_FILES = malloc.c create_new_link.c get_padded_size.c create_new_memory_block.c search_best_fit.c detach_link.c get_arena_type.c init_arena.c split_block.c search_link_before.c insert_link_after.c insert_link_in_list.c ft_utils.c print_address.c show_alloc_mem.c
+SRC_FILES = malloc.c create_new_link.c get_padded_size.c create_new_memory_block.c search_best_fit.c detach_link.c get_arena_type.c init_arena.c split_block.c search_link_before.c insert_link_after.c insert_link_in_list.c ft_utils.c print_address.c show_alloc_mem.c my_show_alloc_mem.c
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
 ##### OBJECTS #####

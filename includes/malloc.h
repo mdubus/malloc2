@@ -56,6 +56,7 @@ void		ft_putstr(char *str);
 void		print_address(uintptr_t ptr);
 char		*ft_utoa_base_r(char *buf, unsigned long long n, unsigned base);
 void		show_alloc_mem();
+void		my_show_alloc_mem();
 
 
 /* TESTS */

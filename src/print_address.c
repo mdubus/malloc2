@@ -30,7 +30,7 @@ char	*ft_utoa_base_r(char *buf, unsigned long long n, unsigned base)
 
 	if (base > 16)
 		return (NULL);
-	charset = "0123456789abcdef";
+	charset = "0123456789ABCDEF";
 	i = 0;
 	if (n == 0)
 		buf[i++] = '0';

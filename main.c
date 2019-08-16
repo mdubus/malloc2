@@ -12,7 +12,11 @@ int	main(void)
 	str2 = ft_malloc(6);
 	str2 = strdup("there\0");
 	str3 = ft_malloc(50);
-	printf("%s %s\n", str, str2);
+	str3 = ft_malloc(600);
+	str3 = ft_malloc(50000000);
+	ft_putstr("----- my show alloc mem : -----\n");
+	my_show_alloc_mem();
+	ft_putstr("\n----- show alloc mem : -----\n");
 	show_alloc_mem();
 	return 0;
 }
