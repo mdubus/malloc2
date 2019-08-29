@@ -61,9 +61,9 @@ void	*ft_malloc(size_t size)
 		}
 		best_fit = get_best_fit(arena_type, padded_size);
 		split_block(&best_fit, padded_size);
-		detach_link(&l.free[arena_type], best_fit);
+		detach_link(&l.free[arena_type], &best_fit);
 		insert_link_in_list(&l.used, &best_fit);
-		return (best_fit + sizeof(t_header));
+		return ((void *)best_fit + sizeof(t_header));
 	}
 	return (0);
 }

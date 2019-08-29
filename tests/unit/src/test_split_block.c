@@ -10,7 +10,7 @@ void	test_cant_split_1(void)
 	l.free[TINY] = (t_header*)mmap(0, size, MMAP_PROT, MMAP_FLAGS, -1, 0);
 	create_new_link(&l.free[TINY]);
 	l.free[TINY]->size = 10;
-	split_block(&l.free[TINY], TINY, 10);
+	split_block(&l.free[TINY], 10);
 	TEST_ASSERT_EQUAL(l.free[TINY]->next, NULL);
 	munmap(l.free[TINY], size);
 }
@@ -23,7 +23,7 @@ void	test_cant_split_2(void)
 	l.free[TINY] = (t_header*)mmap(0, size, MMAP_PROT, MMAP_FLAGS, -1, 0);
 	create_new_link(&l.free[TINY]);
 	l.free[TINY]->size = 10 + sizeof(t_header);
-	split_block(&l.free[TINY], TINY, 10);
+	split_block(&l.free[TINY], 10);
 	TEST_ASSERT_EQUAL(l.free[TINY]->next, NULL);
 	munmap(l.free[TINY], size);
 }
@@ -36,7 +36,7 @@ void	test_split(void)
 	l.free[TINY] = (t_header*)mmap(0, size, MMAP_PROT, MMAP_FLAGS, -1, 0);
 	create_new_link(&l.free[TINY]);
 	l.free[TINY]->size = 20 + sizeof(t_header);
-	split_block(&l.free[TINY], TINY, 10);
+	split_block(&l.free[TINY], 10);
 	TEST_ASSERT_EQUAL(l.free[TINY]->size, 10);
 	TEST_ASSERT_EQUAL(l.free[TINY]->next->size, 10);
 	munmap(l.free[TINY], size);

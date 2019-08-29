@@ -13,7 +13,7 @@ void	test_detach_first_link(void)
 	list->next->next->size = 3;
 	tmp = list;
 	link = list;
-	detach_link(&list, link);
+	detach_link(&list, &link);
 	TEST_ASSERT_EQUAL(link->next, NULL);
 	TEST_ASSERT_EQUAL(link->prev, NULL);
 	TEST_ASSERT_EQUAL(link->size, 1);
@@ -37,7 +37,7 @@ void	test_detach_middle_link(void)
 	list->next->next->size = 3;
 	tmp = list;
 	link = list->next;
-	detach_link(&list, link);
+	detach_link(&list, &link);
 	TEST_ASSERT_EQUAL(link->next, NULL);
 	TEST_ASSERT_EQUAL(link->prev, NULL);
 	TEST_ASSERT_EQUAL(link->size, 2);
@@ -61,7 +61,7 @@ void	test_detach_last_link(void)
 	list->next->next->size = 3;
 	tmp = list;
 	link = list->next->next;
-	detach_link(&list, link);
+	detach_link(&list, &link);
 	TEST_ASSERT_EQUAL(link->next, NULL);
 	TEST_ASSERT_EQUAL(link->prev, NULL);
 	TEST_ASSERT_EQUAL(link->size, 3);

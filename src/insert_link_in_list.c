@@ -7,7 +7,7 @@ void	insert_link_in_list(t_header **list, t_header **link)
 
 	if (*list == NULL)
 		*list = *link;
-	else 
+	else
 	{
 		before = search_link_before(*link, *list);
 		insert_link_after(&before, link);
